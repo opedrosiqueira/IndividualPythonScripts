@@ -29,6 +29,10 @@ def grave_accent():
     Global.controller.type('`')
 
 
+def circumflex_accent():
+    Global.controller.type('^')
+
+
 def left_double_angle_quote():
     Global.controller.type('«')
 
@@ -69,6 +73,7 @@ def set_hotkeys():
         '<shift>+<alt_gr>+u': up_arrow,
         '<alt_gr>+i': right_arrow,
         '<alt_gr>+´': grave_accent,
+        '<alt_gr>+~': circumflex_accent,
         '<alt_gr>+z': left_double_angle_quote,
         '<alt_gr>+x': right_double_angle_quote,
         '<alt_gr>+v': left_double_quote,
