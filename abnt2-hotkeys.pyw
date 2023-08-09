@@ -9,6 +9,9 @@ from pynput import keyboard
 import pystray
 
 
+def en_dash():
+    Global.controller.type('–')
+
 def left_arrow():
     Global.controller.type('←')
 
@@ -67,6 +70,7 @@ def right_single_quote():
 
 def set_hotkeys():
     Global.h = keyboard.GlobalHotKeys({
+        '<alt_gr>+-': en_dash,
         '<alt_gr>+y': left_arrow,
         '<alt_gr>+u': down_arrow,
         # não sei se é um bug ou 'feature' do pynput, mas seu eu pressionar <shift>+<alt_gr>+u, ele também dispara a hotkey <alt_gr>+shift+u
