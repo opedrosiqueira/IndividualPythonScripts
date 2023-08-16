@@ -45,7 +45,7 @@ if alt:
 if args.javascript:
     if not id:
         raise argparse.ArgumentTypeError("ID is required for javascript option!")
-    tag = f"document.getElementById({id[3]}).src = 'data:image/png;base64,{img_base64}'\n"
+    tag = f"document.getElementById({id[3:]}).src = 'data:image/png;base64,{img_base64}'\n"
     src = ''
 else:
     tag = ''
