@@ -1,12 +1,8 @@
-import os
-from pathlib import PureWindowsPath
-
-
-def convert(path):
-    return PureWindowsPath(os.path.abspath(PureWindowsPath(path).as_posix())).as_posix()
-
-print('Windows path: ' + convert(r'.\tmp.html'))
-print('Posix path: ' + convert('tmp.html'))
-
-print(os.name)
-print(os.environ['tmp'])
+import logging
+import sys
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+logger.addHandler(logging.StreamHandler(sys.stdout))
+logger.info("Info")
+logger.error("error")
+logger.info("info")
