@@ -25,7 +25,7 @@ def showmessage(a, href, text):
     found = True
 
 
-def prepararBanco(path="/home/pedro/Mega/NetBeansProjects/PythonScripts/db.sqlite"):
+def prepararBanco(path="/home/pedro/Mega/CodingProjects/PythonScripts/db.sqlite"):
     con = sqlite3.connect(path)
     cur = con.cursor()
     cur.execute("CREATE TABLE IF NOT EXISTS dias_vistos(data text)")
@@ -150,12 +150,12 @@ def buscatreslagoasblog(
 if __name__ == "__main__":
     global found
     found = False
-    db_path = '/home/pedro/Mega/NetBeansProjects/PythonScripts/db.sqlite'
-    log_path = '/home/pedro/Mega/NetBeansProjects/PythonScripts/debug.log'
+    db_path = '/home/pedro/Mega/CodingProjects/PythonScripts/db.sqlite'
+    log_path = '/home/pedro/Mega/CodingProjects/PythonScripts/debug.log'
     filename = '/tmp/concurso.html'
     if os.name == 'nt':
-        db_path = r'C:\Users\siqueira\Mega\NetBeansProjects\PythonScripts\db.sqlite'
-        log_path = r'C:\Users\siqueira\Mega\NetBeansProjects\PythonScripts\debug.log'
+        db_path = r'C:\Users\siqueira\Mega\CodingProjects\PythonScripts\db.sqlite'
+        log_path = r'C:\Users\siqueira\Mega\CodingProjects\PythonScripts\debug.log'
         filename = os.environ['tmp']+'\\concurso.html'
 
     logging.basicConfig(
