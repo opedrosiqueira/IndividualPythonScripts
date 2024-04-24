@@ -6,7 +6,7 @@ import re
 
 def extract_timestamp(input_string):
     # Define a regular expression pattern for mm:ss or hh:mm:ss format
-    pattern = re.compile(r"(\d{1,}:\d{1,}(:\d{1,})?)\s*$")
+    pattern = re.compile(r"(\d{1,}:\d{1,}(:\d{1,})?)")
 
     # Use findall to search for the pattern in the input string
     matches = pattern.findall(input_string)
@@ -20,12 +20,9 @@ def extract_timestamp(input_string):
         return None
 
 
-def extract_filename_from_timestamp(input_string):
+def extract_filename_from_timestamp(input_string: str):
     timestamp = extract_timestamp(input_string)
-    try:
-        slug = slugify(input_string.replace(timestamp, ""), separator="_")
-    except Exception as e:
-        print(e, input_string)
+    slug = slugify(input_string.replace(timestamp, ""), separator="_")
     return (slug, timestamp)
 
 
