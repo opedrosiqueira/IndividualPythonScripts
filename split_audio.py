@@ -39,19 +39,18 @@ def main():
         output_name, from_timestamp = extract_filename_from_timestamp(file.readline())
         lines = file.readlines()
         num_digits = len(str(len(lines)))
+        print("ffmpeg -i", '"' + args.audio_file + '" \\')
         for line in lines:
             if args.prefix:
                 output_name = os.path.splitext(args.audio_file)[0] + "_" + f"{prefix:0{num_digits}d}"
                 prefix += 1
             next_output_name, to_timestamp = extract_filename_from_timestamp(line)
-            print(
-                "ffmpeg -i", '"' + args.audio_file + '"', "-ss", from_timestamp, "-to", to_timestamp, "-acodec copy", '"' + output_name + os.path.splitext(args.audio_file)[1] + '"'
-            )
+            print("  -ss", from_timestamp, "-to", to_timestamp, "-acodec copy", '"' + output_name + os.path.splitext(args.audio_file)[1] + '" \\')
             output_name, from_timestamp = next_output_name, to_timestamp
         if args.prefix:
             output_name = os.path.splitext(args.audio_file)[0] + "_" + f"{prefix:0{num_digits}d}"
             prefix += 1
-        print("ffmpeg -i", '"' + args.audio_file + '"', "-ss", from_timestamp, "-acodec copy", '"' + output_name + os.path.splitext(args.audio_file)[1] + '"')
+        print("  -ss", from_timestamp, "-acodec copy", '"' + output_name + os.path.splitext(args.audio_file)[1] + '"')
 
 
 if __name__ == "__main__":

@@ -154,8 +154,8 @@ if __name__ == "__main__":
     log_path = '/home/pedro/Mega/CodingProjects/PythonScripts/debug.log'
     filename = '/tmp/concurso.html'
     if os.name == 'nt':
-        db_path = r'C:\Users\siqueira\Mega\CodingProjects\PythonScripts\db.sqlite'
-        log_path = r'C:\Users\siqueira\Mega\CodingProjects\PythonScripts\debug.log'
+        db_path = r'D:\Mega\CodingProjects\PythonScripts\db.sqlite'
+        log_path = r'D:\Mega\CodingProjects\PythonScripts\debug.log'
         filename = os.environ['tmp']+'\\concurso.html'
 
     logging.basicConfig(
