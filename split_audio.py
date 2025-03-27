@@ -3,6 +3,11 @@ import argparse
 from slugify import slugify
 import re
 
+"""
+exemplo de uso: python3 split_audio.py livro.m4a sumario.txt
+
+para cada linha no arquivo sumario que tiver o padrão mm:ss ou o padrão hh:mm:ss, extrai um arquivo de livro.m4a correspondente ao início daquele padrão.
+"""
 
 def extract_timestamp(input_string):
     # Define a regular expression pattern for mm:ss or hh:mm:ss format
